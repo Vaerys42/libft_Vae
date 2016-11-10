@@ -55,7 +55,6 @@ ft_memccpy:    [OK] [FAILED] [FAILED] [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK
 
 	ft_memchr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 	ft_memcmp:     [OK] [OK] [OK] [FAILED] [FAILED] [FAILED] [OK] [OK] [OK] 
-	[fail]: your memcmp does not work with basic input
 	[fail]: your memcmp does not cast the memory in unsigned char
 	[fail]: your memcmp does not work with basic input
 
