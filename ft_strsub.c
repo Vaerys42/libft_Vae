@@ -1,0 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/07 13:34:52 by kboucaud          #+#    #+#             */
+/*   Updated: 2016/11/09 11:58:58 by kboucaud         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+#include <string.h>
+
+char	*ft_strsub(char *s, unsigned int start, size_t len)
+{
+	char				*part;
+	unsigned int		i;
+
+	i = 0;
+	part = (char*)malloc(sizeof(char) * (len + 1));
+	if (part == NULL)
+		return (NULL);
+	while (i < len)
+	{
+		part[i] = s[start + i];
+		i++;
+	}
+	part[i] = '\0';
+	return (part);
+}

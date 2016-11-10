@@ -1,0 +1,3 @@
+ft_strrchr:    [OK] [OK] [FAILED] [CRASH] [OK] [OK] [OK] 
+[fail]: your strrchr does not work with unicode
+[crash]: your strrchr does not work with 
