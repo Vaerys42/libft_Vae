@@ -6,16 +6,19 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 15:38:35 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/09 18:27:50 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/10 10:57:13 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strcmp(char *s1, char *s2)
 {
-	int i;
+	unsigned int i;
+	unsigned int diff;
 
 	i = 0;
+	diff = 0;
 	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
 		i++;
-	return (i);
+	diff = s1[i] - s2[i];
+	return (diff);
 }
