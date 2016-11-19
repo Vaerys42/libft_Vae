@@ -6,13 +6,13 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 12:54:34 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/09 12:01:50 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/13 10:57:08 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
 	char	*new;

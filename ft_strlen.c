@@ -6,11 +6,11 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 15:34:42 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/04 15:36:57 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/13 11:05:51 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int		ft_strlen(char const *str)
 {
 	int i;
 

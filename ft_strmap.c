@@ -6,14 +6,14 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 12:48:13 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/09 12:01:25 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/13 10:56:16 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <string.h>
 
-char	*ft_strmap(char *s, char (*f)(char))
+char	*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*new;
 	int		i;

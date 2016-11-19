@@ -6,7 +6,7 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:34:45 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/10 12:20:29 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/13 15:39:44 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 char	*ft_strstr(char *find_in, char *to_find)
 {
-	int i;
-	int j;
-	int k;
+	int		len;
+	int		i;
+	int		j;
+	int		k;
 
+	len = 0;
 	i = 0;
 	j = 0;
 	k = 0;
@@ -28,15 +30,14 @@ char	*ft_strstr(char *find_in, char *to_find)
 		if (find_in[i] == to_find[j])
 		{
 			k = i;
-			while (find_in[i] == to_find[j] && to_find[j] != '\0')
+			while (find_in[k] == to_find[j] && to_find[j] != '\0')
 			{
+				k++;
 				j++;
-				i++;
 			}
 			if (to_find[j] == '\0')
-				return (&to_find[i - j]);
+				return (&find_in[i]);
 			j = 0;
-			i = k;
 		}
 		i++;
 	}

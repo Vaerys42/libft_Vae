@@ -1,182 +1,29 @@
-42FILECHECKER INFO:
-
-Here is the full standard output of the libft-unit-test running with your libft.
-See also the clean logfile provided by the library at the following path:
-/Users/kboucaud/42FileChecker/libft-unit-test/result.log
-
-
-
-------------------------------------------------
-
-
-
-make -j 3 re -C /Users/kboucaud/Documents/lib 
-/bin/rm -f ft_strtrim.o ft_atoi.o ft_bzero.o ft_isalpha.o ft_isascii.o ft_isalnum.o ft_isdigit.o  ft_isprint.o ft_memalloc.o ft_memccpy.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memdel.o ft_memmove.o ft_memset.o ft_putchar.o ft_putchar_fd.o ft_putendl.o ft_putendl_fd.o ft_putnbr.o ft_putnbr_fd.o ft_putstr.o ft_putstr_fd.o ft_strcat.o ft_strchr.o ft_strclr.o  ft_strcmp.o ft_strcpy.o ft_strdel.o ft_strdup.o ft_strequ.o ft_striter.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlen.o ft_strmap.o ft_strmapi.o ft_strncat.o ft_strncmp.o ft_strncpy.o ft_strnequ.o ft_strnew.o ft_strnstr.o ft_strrchr.o ft_strstr.o ft_strsub.o ft_tolower.o ft_toupper.o
-/bin/rm -rf libft.a
-[  Cleaning #0  ]
-‚M-^^§  rm -f obj/main.o obj/test_functions.o obj/display_test_result.o obj/signal.o obj/sandbox.o obj/bench_functions.o 
-‚M-^^§  rm -f libft.so assets/libft.a assetslibtests assets/malloc.dylib 
-‚M-^^§  rm -f run_test 
-make -j 3 -C /Users/kboucaud/Documents/lib 
-gcc -c -Wall -Wextra -Werror ft_strtrim.c ft_atoi.c ft_bzero.c ft_isalpha.c ft_isalnum.c ft_isascii.c ft_isdigit.c  ft_isprint.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c ft_putchar.c ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c ft_putstr.c ft_putstr_fd.c ft_strcat.c ft_strchr.c ft_strclr.c  ft_strcmp.c ft_strcpy.c ft_strdel.c ft_strdup.c ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c	ft_strrchr.c ft_strstr.c ft_strsub.c ft_tolower.c ft_toupper.c
-ar rc libft.a ft_strtrim.o ft_atoi.o ft_bzero.o ft_isalpha.o ft_isalnum.o ft_isascii.o ft_isdigit.o  ft_isprint.o ft_memalloc.o ft_memccpy.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memdel.o ft_memmove.o ft_memset.o ft_putchar.o ft_putchar_fd.o ft_putendl.o ft_putendl_fd.o ft_putnbr.o ft_putnbr_fd.o ft_putstr.o ft_putstr_fd.o ft_strcat.o ft_strchr.o ft_strclr.o  ft_strcmp.o ft_strcpy.o ft_strdel.o ft_strdup.o ft_strequ.o ft_striter.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlen.o ft_strmap.o ft_strmapi.o ft_strncat.o ft_strncmp.o ft_strncpy.o ft_strnequ.o ft_strnew.o ft_strnstr.o ft_strrchr.o ft_strstr.o ft_strsub.o ft_tolower.o ft_toupper.o
-cp /Users/kboucaud/Documents/lib/libft.a assets/ 
-‚M-^^§  clang -shared -fPIC assets/tmp/ft_atoi.o assets/tmp/ft_bzero.o assets/tmp/ft_isalnum.o assets/tmp/ft_isalpha.o assets/tmp/ft_isascii.o assets/tmp/ft_isdigit.o assets/tmp/ft_isprint.o assets/tmp/ft_memalloc.o assets/tmp/ft_memccpy.o assets/tmp/ft_memchr.o assets/tmp/ft_memcmp.o assets/tmp/ft_memcpy.o assets/tmp/ft_memdel.o assets/tmp/ft_memmove.o assets/tmp/ft_memset.o assets/tmp/ft_putchar.o assets/tmp/ft_putchar_fd.o assets/tmp/ft_putendl.o assets/tmp/ft_putendl_fd.o assets/tmp/ft_putnbr.o assets/tmp/ft_putnbr_fd.o assets/tmp/ft_putstr.o assets/tmp/ft_putstr_fd.o assets/tmp/ft_strcat.o assets/tmp/ft_strchr.o assets/tmp/ft_strclr.o assets/tmp/ft_strcmp.o assets/tmp/ft_strcpy.o assets/tmp/ft_strdel.o assets/tmp/ft_strdup.o assets/tmp/ft_strequ.o assets/tmp/ft_striter.o assets/tmp/ft_striteri.o assets/tmp/ft_strjoin.o assets/tmp/ft_strlcat.o assets/tmp/ft_strlen.o assets/tmp/ft_strmap.o assets/tmp/ft_strmapi.o assets/tmp/ft_strncat.o assets/tmp/ft_strncmp.o assets/tmp/ft_strncpy.o assets/tmp/ft_strnequ.o assets/tmp/ft_strnew.o assets/tmp/ft_strnstr.o assets/tmp/ft_strrchr.o assets/tmp/ft_strstr.o assets/tmp/ft_strsub.o assets/tmp/ft_strtrim.o assets/tmp/ft_tolower.o assets/tmp/ft_toupper.o -o libft.so 
-[  Building #0  ]
-‚M-^^§  clang -O2 -funroll-loops -Werror -Wall -Wextra -I./include -o obj/main.o -c src/main.c 
-[  Building #0  ]
-‚M-^^§  clang -O2 -funroll-loops -Werror -Wall -Wextra -I./include -o obj/test_functions.o -c src/test_functions.c 
-[  Building #0  ]
-‚M-^^§  clang -O2 -funroll-loops -Werror -Wall -Wextra -I./include -o obj/display_test_result.o -c src/display_test_result.c 
-[  Building #0  ]
-‚M-^^§  clang -O2 -funroll-loops -Werror -Wall -Wextra -I./include -o obj/signal.o -c src/signal.c 
-[  Building #0  ]
-‚M-^^§  clang -O2 -funroll-loops -Werror -Wall -Wextra -I./include -o obj/sandbox.o -c src/sandbox.c 
-[  Building #0  ]
-‚M-^^§  clang -O2 -funroll-loops -Werror -Wall -Wextra -I./include -o obj/bench_functions.o -c src/bench_functions.c 
-[  Linking #0  ]
-‚M-^^§  clang -Werror -Wall -Wextra -O2 -funroll-loops -o assets/libtests obj/main.o obj/test_functions.o obj/display_test_result.o obj/signal.o obj/sandbox.o obj/bench_functions.o
-clang -Werror -Wall -Wextra -dynamiclib assets/malloc.c -I ./include -o assets/malloc.dylib 
-clang -Werror -Wall -Wextra assets/wrapper.c -I ./include -o run_test 
-RUNING TESTS:
-First part
-.-"-.     .-"-.     .-"-.     .-"-.     .-"-.     .-"-.
-"-.-"     "-.-"     "-.-"     "-.-"     "-.-"    
-ft_memset:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-ft_bzero:      [OK] [OK] [OK] [OK] 
-ft_memcpy:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_memccpy:    [OK] [FAILED] [FAILED] [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] 
-[fail]: your memccpy doesn't cast the memory into unsigned char
 [fail]: your memccpy's return is false/doesn't work with basic params
-[fail]: your memccpy does not work with basic params
 
-	ft_memmove:    [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-[fail]: your memmove does not support the overlap (test 1)
+ft_strlcat:    [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [NO CRASH] 
+[fail]: your strlcat does not work with basic input
+[fail]: your strlcat return value is false
+[no crash]: your strlcat does not segfault when null parameter is sent
 
-	ft_memchr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-	ft_memcmp:     [OK] [OK] [OK] [FAILED] [FAILED] [FAILED] [OK] [OK] [OK] 
-	[fail]: your memcmp does not cast the memory in unsigned char
-	[fail]: your memcmp does not work with basic input
+ft_strrchr:    [OK] [OK] [FAILED] [FAILED] [OK] [OK] [OK] 
+[fail]: your strrchr does not work with unicode
+[fail]: your strrchr does not work with 
 
-	ft_strlen:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] ENOMEM
-	ft_strdup:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-	ft_strcpy:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-	ft_strncpy:    [CRASH] [OK] [CRASH] [CRASH] [CRASH] [CRASH] [CRASH] [FAILED] [CRASH] [OK] [OK] 
-	[crash]: your strncpy does not work with basic input
-	[crash]: your strncpy does not support unicode ?
-	[crash]: your strncpy does not work with an empty string
-	[crash]: your strncpy does not work with an 0 as lenght
-	[crash]: your strncpy does not fill with  the rest of the dest buffer
-	[crash]: your strncpy put the bad number of  at the end of the string
-	[fail]: your strncpy set a  at the end of the string if strlen(src) > n
-	[crash]: your strncpy crash cause it read too many bytes or attempt to read on dst !
+ft_strnstr:    [FAILED] [OK] [OK] [OK] [OK] [OK] [FAILED] [FAILED] [CRASH] [OK] [OK] 
+[fail]: your strnstr does not work with basic input
+[fail]: your strnstr does not work with empty strings
+[fail]: your strnstr does not work with empty strings
+[crash]: your strnstr crash cause it read too many bytes !
 
-	ft_strcat:     [FAILED] [OK] [FAILED] [FAILED] [OK] [FAILED] [FAILED] [OK] [OK] [OK] 
-	[fail]: your strcat does not work with basic input
-	[fail]: your strcat does not work with unicode
-	[fail]: your strcat overflow the dst buffer
-	[fail]: your strcat does not work with empty string as second parameter
-	[fail]: your strcat does not set a  to the end
+ft_strtrim:    [FAILED] [FAILED] [FAILED] [CRASH] [OK] [KO] [FAILED] [OK] [FAILED] [M-^_M-^R• ] 
+[fail]: your strtrim does not work with basic input
+[fail]: your strtrim does not work with basic input
+[fail]: your strtrim does not work with basic input
+[crash]: your strtrim does not work with full blank input
+[KO]: your strtrim did not allocate the good size so the  test may be false
+[fail]: your strtrim does not allocate memory
+[fail]: your strtrim does not set  to the end of the string
 
-	ft_strncat:    [FAILED] [OK] [FAILED] [OK] [OK] [OK] [FAILED] [OK] [CRASH] [OK] [OK] 
-	[fail]: your strncat does not work with basic input
-	[fail]: your strncat does not work with basic input
-	[fail]: your strcat does not work with empty string as second parameter
-	[crash]: your strncat crash cause it read too many bytes or attempt to write on buff !
-
-	ft_strlcat:    [FAILED] [FAILED] [FAILED] [OK] [OK] [OK] [OK] [CRASH] [FAILED] [OK] [OK] 
-	[fail]: your strlcat does not work with basic input
-	[fail]: your strlcat does not work with basic input
-	[fail]: your strlcat does not work with basic input
-	[crash]: your strlcat crash cause it read too many bytes or attempt to write on buff !
-	[fail]: your strlcat return value is false
-
-	ft_strchr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-	ft_strrchr:    [OK] [OK] [FAILED] [FAILED] [FAILED] [OK] [OK] 
-	[fail]: your strrchr does not work with unicode
-	[fail]: your strrchr does not work with 
-
-	ft_strstr:     [OK] [FAILED] [FAILED] [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
-	[fail]: your strstr does not work with basic input
-	[fail]: your strstr does not work with basic input
-	[fail]: your strstr does not work with unicode string
-
-	ft_strnstr:    [FAILED] [OK] [OK] [CRASH] [OK] [OK] [CRASH] [CRASH] [CRASH] [OK] [NO CRASH] 
-	[fail]: your strnstr does not work with basic input
-	[crash]: your strnstr does not work with not found patern
-	[crash]: your strnstr does not work with empty strings
-	[crash]: your strnstr does not work with empty strings
-	[crash]: your strnstr crash cause it read too many bytes !
-	[no crash]: your strnstr does not segfault when null parameter is sent
-
-	ft_strcmp:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [FAILED] [OK] [OK] [OK] 
-	[fail]: your strcmp does not cast in unsigned the diff
-	[fail]: your strcmp does not work with non ascii chars
-
-	ft_strncmp:    [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [FAILED] [OK] [OK] [OK] 
-	[fail]: your strncmp does not cast in unsigned char the diff
-	[fail]: your strncmp does not work with non ascii chars
-
-	ft_atoi:       [FAILED] [FAILED] [FAILED] [FAILED] [OK] [FAILED] [FAILED] [FAILED] [KO] [OK] [OK] 
-	[fail]: your atoi does not work with positive numbers
-	[fail]: your atoi does not work with negative numbers
-	[fail]: your atoi does not work with random numbers
-	[fail]: your atoi is not working with blanks
-	[fail]: your atoi is not working with blanks
-	[fail]: your atoi does not work with int max value
-	[fail]: your atoi does not work with int min value
-	[KO]: your atoi does not work with long max value
-
-	ft_isalpha:    [OK] 
-	ft_isdigit:    [OK] 
-	ft_isalnum:    [OK] 
-	ft_isascii:    [OK] 
-	ft_isprint:    [OK] 
-	ft_toupper:    [OK] 
-	ft_tolower:    [OK] 
-
-	In this part, you can choose to protect your function or not to,
-	a color code will tell you if your function is protected/not BUT stay coherent !
-	[M-^_M-^[° ] --> protected
-	[M-^_M-^R• ] --> not protected
-	Second part
-__)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)(__  __)
-	(______)(______)(______)(______)(______)(______)(______)(___
-
-			ft_memalloc:   [OK] [OK] [OK] [OK] [OK] 
-			ft_memdel:     [OK] [OK] [M-^_M-^R• ] 
-			ft_strnew:     [OK] [OK] [OK] [OK] 
-			ft_strdel:     [OK] [OK] [M-^_M-^R• ] 
-			ft_strclr:     [OK] [M-^_M-^R• ] 
-			ft_striter:    [OK] [OK] [M-^_M-^R• ] 
-			ft_striteri:   [OK] [OK] [M-^_M-^R• ] 
-			ft_strmap:     [OK] [OK] [OK] [OK] [OK] [M-^_M-^R• ] 
-			ft_strmapi:    [OK] [OK] [OK] [OK] [OK] [M-^_M-^R• ] 
-			ft_strequ:     [OK] [OK] [OK] [OK] [M-^_M-^R• ] 
-			ft_strnequ:    [OK] [OK] [OK] [OK] [M-^_M-^R• ] 
-			ft_strsub:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [M-^_M-^R• ] 
-			ft_strjoin:    [OK] [OK] [OK] [OK] [OK] [M-^_M-^R• ] 
-			ft_strtrim:    [FAILED] [FAILED] [FAILED] [CRASH] [OK] [KO] [FAILED] [OK] [FAILED] [M-^_M-^R• ] 
-			[fail]: your strtrim does not work with basic input
-			[fail]: your strtrim does not work with basic input
-			[fail]: your strtrim does not work with basic input
-			[crash]: your strtrim does not work with full blank input
-			[KO]: your strtrim did not allocate the good size so the  test may be false
-	[fail]: your strtrim does not allocate memory
-	[fail]: your strtrim does not set  to the end of the string
-
-	ft_strsplit:   [MISSING]
-	ft_itoa:       [MISSING]
-	ft_putchar:    [OK] [OK] [KO] 
-	[KO]: your putchar does not work with unicode
-
-	ft_putstr:     [OK] [OK] [M-^_M-^R• ] 
-	ft_putendl:    [OK] [OK] [M-^_M-^R• ] 
-	ft_putnbr:     [OK] [OK] [OK] [OK] [OK] 
-	ft_putchar_fd: [OK] [OK] [KO] 
-	[KO]: your putchar_fd does not work with unicode
-
-	ft_putstr_fd:  [OK] [OK] [M-^_M-^R• ] 
-	ft_putendl_fd: [OK] [OK] [M-^_M-^R• ] 
-	ft_putnbr_fd:  [OK] [OK] [OK] [OK] [OK] 
-	See result.log for more informations !
+ft_strsplit:   [MISSING]
+ft_itoa:       [MISSING]

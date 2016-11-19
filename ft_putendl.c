@@ -6,14 +6,14 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:57:08 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/08 15:44:14 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/13 11:02:30 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putendl(char *str)
+void	ft_putendl(char const *str)
 {
 	int i;
 

@@ -6,14 +6,14 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:34:52 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/09 11:58:58 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/13 11:00:00 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <string.h>
 
-char	*ft_strsub(char *s, unsigned int start, size_t len)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char				*part;
 	unsigned int		i;

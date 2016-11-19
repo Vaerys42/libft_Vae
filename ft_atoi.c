@@ -5,31 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 12:15:37 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/08 12:30:34 by kboucaud         ###   ########.fr       */
+/*   Created: 2016/11/19 10:09:38 by kboucaud          #+#    #+#             */
+/*   Updated: 2016/11/19 10:39:38 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *nptr)
+int		ft_atoi(const char *nptr)
 {
-	int		nbr;
 	int		i;
 	int		neg;
-
-	nbr = 0;
+	int		nbr;
 	i = 0;
+	nbr = 0;
 	neg = 0;
-	while (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\t')
+	while (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\t'\
+			|| nptr[i] == '\f' || nptr[i] == '\v' || nptr[i] == '\r')
 		i++;
 	if (nptr[i] == '-')
 		neg = 1;
-	while (nptr[i] != '\0' && nptr[i] > 47 && nptr[i] < 58)
+	if (nptr[i] == '+' || nptr[i] == '-')
+		i++;
+	while (nptr[i] >= 48 && nptr[i] <= 57 && nptr[i] != '\0')
 	{
 		nbr = nbr * 10;
-		nbr = nptr[i] + 48;
+		nbr = nbr + (nptr[i] - 48);
 		i++;
 	}
 	if (neg == 1)
-		nbr = -nbr;
+		return (-nbr);
 	return (nbr);
 }

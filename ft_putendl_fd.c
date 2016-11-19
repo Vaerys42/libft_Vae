@@ -6,13 +6,13 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 12:08:31 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/08 15:45:19 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/13 11:02:55 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putendl_fd(char *str, int fd)
+void	ft_putendl_fd(char const *str, int fd)
 {
 	int i;
 

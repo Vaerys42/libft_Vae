@@ -6,11 +6,11 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 13:02:43 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/09 13:48:18 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/13 10:57:59 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strequ(char *s1, char *s2)
+int		ft_strequ(char const *s1, char const *s2)
 {
 	int i;
 	int	c1;

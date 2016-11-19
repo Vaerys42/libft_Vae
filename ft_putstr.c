@@ -6,13 +6,13 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:54:04 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/07 12:03:35 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/13 11:02:06 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr(char *str)
+void	ft_putstr(char const *str)
 {
 	int i;
 

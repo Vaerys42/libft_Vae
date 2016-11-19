@@ -6,13 +6,13 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 16:34:13 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/10 10:51:44 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/13 11:01:34 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strtrim(char *s)
+char	*ft_strtrim(char const *s)
 {
 	int		i;
 	int		j;
