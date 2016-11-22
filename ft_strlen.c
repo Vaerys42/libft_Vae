@@ -6,13 +6,15 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 15:34:42 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/13 11:05:51 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/21 13:10:38 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char const *str)
+#include <string.h>
+
+size_t		ft_strlen(char const *str)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (str[i] != '\0')

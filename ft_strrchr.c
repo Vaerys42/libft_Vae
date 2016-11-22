@@ -6,7 +6,7 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:30:59 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/10 12:33:39 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/20 16:49:47 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,15 @@ char	*ft_strrchr(char *s, int c)
 
 	i = 0;
 	j = 0;
-	if (c == '\0' && s[0] == '\0')
-		return (&s[0]);
-	if (s[0] == '\0')
-		return (NULL);
-	while (s[i] != '\0')
+	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			j = i;
 		i++;
 	}
-	if (c != 0)
+	if (s[i] == (unsigned char)c)
+		j = i;
+	if (j != 0)
 		return (&s[j]);
 	return (NULL);
 }

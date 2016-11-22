@@ -1,20 +1,7 @@
-ft_memccpy:    [OK] [FAILED] [FAILED] [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] 
-[fail]: your memccpy's return is false/doesn't work with basic params
-
 ft_strlcat:    [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [NO CRASH] 
 [fail]: your strlcat does not work with basic input
 [fail]: your strlcat return value is false
 [no crash]: your strlcat does not segfault when null parameter is sent
-
-ft_strrchr:    [OK] [OK] [FAILED] [FAILED] [OK] [OK] [OK] 
-[fail]: your strrchr does not work with unicode
-[fail]: your strrchr does not work with 
-
-ft_strnstr:    [FAILED] [OK] [OK] [OK] [OK] [OK] [FAILED] [FAILED] [CRASH] [OK] [OK] 
-[fail]: your strnstr does not work with basic input
-[fail]: your strnstr does not work with empty strings
-[fail]: your strnstr does not work with empty strings
-[crash]: your strnstr crash cause it read too many bytes !
 
 ft_strtrim:    [FAILED] [FAILED] [FAILED] [CRASH] [OK] [KO] [FAILED] [OK] [FAILED] [M-^_M-^R• ] 
 [fail]: your strtrim does not work with basic input

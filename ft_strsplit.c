@@ -5,32 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 16:47:31 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/08 17:20:02 by kboucaud         ###   ########.fr       */
+/*   Created: 2016/11/21 17:41:42 by kboucaud          #+#    #+#             */
+/*   Updated: 2016/11/21 17:43:26 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	**ft_strsplit(char *s, char c)
+#include <string.h>
+#include <stdlib.h>
+
+char    **ft_strsplit(const char *s, char c)
 {
-	int		i;
-	int		j;
-	int		k;
-	char	**new;
+	char    **new;
+	int     i;
+	int     j;
+	char    *tmp;
+	int     count;
 
 	i = 0;
 	j = 0;
-	k = 0;
-	while(s[i] != '\0')
+	new = NULL;
+	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		count = 0;
+		while (s[i] == c)
+			i++;
+		while (s[i + count] != c)
+			count++;
+		tmp = (char*)malloc(sizeof(char) * (count + 1));
+		count = 0;
+		while (s[i] != c)
 		{
-			while (s[i] == c)
-				i++;
-			new[j][k] = '\0';
-			j++;
+			tmp[count] = s[i];
+			i++;
+			count++;
 		}
-		new[j][k] = s[i];
-		i++;
+		new[j] = tmp;
+		j++;
+		free(tmp);
+		tmp = NULL;
 	}
 	return (new);
 }

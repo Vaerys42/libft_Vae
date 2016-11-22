@@ -5,76 +5,91 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 12:31:13 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/08 17:53:35 by kboucaud         ###   ########.fr       */
+/*   Created: 2016/11/21 12:07:45 by kboucaud          #+#    #+#             */
+/*   Updated: 2016/11/21 17:08:24 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <unistd.h>
 #include <stdlib.h>
 
-void	ft_aff(char *str)
-{
-	int		i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-}
-
-static int		ft_len(int n)
+static int	ft_nbrlen(int i)
 {
 	int		len;
 
-	len = 1;
-	while (n > 10)
+	len = 0;
+	if (i < 0)
 	{
-		n = n / 10;
-		len ++;
+		i = -i;
+		len++;
 	}
+	while (i > 9)
+	{
+		i = i / 10;
+		len++;
+	}
+	len++;
 	return (len);
 }
 
-char	*ft_itoa(int n)
+static int	ft_power(int i, int pwr)
 {
-	char	*nptr;
-	int		len;
-	int		neg;
-	int		i;
-
-	neg = 0;
-	i = 0;
-	if (n < 0)
+	while (pwr != 1)
 	{
-		n = -n;
-		neg = 1;
+		i = i * i;
+		pwr--;
 	}
-	len = ft_len(n);
-	nptr = (char*)malloc(sizeof(char) * (len + 1));
-	if (nptr == NULL)
-		return (NULL);
-	if (neg == 1)
-	{
-		nptr[i] = '-';
-		i++;
-	}
-	while (len != 0)
-	{
-		nptr[i] = () + 48;
-		i++;
-		len--;
-	}
-	nptr[i] = '\0';
-	ft_aff(nptr);
-	return (nptr);
+	return (i);
 }
 
-int		main(void)
+static char	*ft_intmin(void)
 {
-	ft_itoa(-42);
-	return (0);
+	char	*str;
+
+	str = (char*)malloc(sizeof(char) * 12);
+	str[0] = '-';
+	str[1] = '2';
+	str[2] = '1';
+	str[3] = '4';
+	str[4] = '7';
+	str[5] = '4';
+	str[6] = '8';
+	str[7] = '3';
+	str[8] = '6';
+	str[9] = '4';
+	str[10] = '8';
+	str[11] = '\0';
+	return (str);
+}
+
+char		*ft_itoa(int i)
+{
+	char	*new;
+	int		j;
+	int		pwr;
+
+	j = 0;
+	if (i == -2147483648)
+		return (ft_intmin());
+	if (i == 2147483647)
+		return ("2147483647");
+	new = (char*)malloc(sizeof(char) * (ft_nbrlen(i) + 1));
+	if (new == NULL)
+		return (NULL);
+	pwr = ft_nbrlen(i) - 1;
+	if (i < 0)
+	{
+		new[j] = '-';
+		j++;
+		i = -i;
+		pwr--;
+	}
+	while (pwr >= 1)
+	{
+		new[j] = ((i / ft_power(10, pwr)) % 10) + 48;
+		j++;
+		pwr--;
+	}
+	new[j] = (i % 10) + 48;
+	new[j + 1] = '\0';
+	return (new);
 }

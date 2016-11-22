@@ -5,39 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/08 16:34:13 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/13 11:01:34 by kboucaud         ###   ########.fr       */
+/*   Created: 2016/11/20 17:43:49 by kboucaud          #+#    #+#             */
+/*   Updated: 2016/11/21 10:59:55 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strtrim(char const *s)
+char	*ft_strtrim(const char *s)
 {
+	char	*str;
 	int		i;
 	int		j;
-	int		len;
+	int		begin;
 	char	*new;
 
-	i = 0;
+	str = (char*)s;
+	i = ft_strlen(str);
+	i--;
 	j = 0;
-	len = 0;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-		i++;
-	while (s[len] != '\0')
-		len++;
-	len--;
-	while (s[len] == ' ' || s[len] == '\n' || s[len] == '\t')
-		len--;
-	new = (char*)malloc(sizeof(char) * (len - i + 1));
+	begin = 0;
+	while ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n') && i != 0)
+		i--;
+	if (i == 0)
+		return ("");
+	while (str[begin] == ' ' || str[begin] == '\t' || str[begin] == '\n')
+		begin ++;
+	while ((begin + j) != (i + 1))
+		j++;
+	new = (char*)malloc(sizeof(char) * (j + 1));
 	if (new == NULL)
 		return (NULL);
-	while (i < len)
+	j = 0;
+	while ((begin + j) != (i + 1))
 	{
-		new[j] = s[i];
+		new[j] = str[begin + j];
 		j++;
-		i++;
 	}
-	new[j] = '\0';
+	new[j] ='\0';
 	return (new);
 }

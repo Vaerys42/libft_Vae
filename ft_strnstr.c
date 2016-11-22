@@ -6,39 +6,34 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 17:13:16 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/13 16:31:19 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/20 17:40:59 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strnstr(char *find_in, char *to_find, size_t len)
+char	*ft_strnstr(const char *meule_de_foin, const char *aiguille, size_t len)
 {
-	unsigned int	i;
-	unsigned int	k;
-	int				j;
+	unsigned int		i;
+	unsigned int		j;
+	char				*find_in;
+	char				*to_find;
 
 	i = 0;
-	j = 0;
-	k = 0;
-	if (to_find[0] == '\0' || len == 0)
+	find_in = (char*)meule_de_foin;
+	to_find = (char*)aiguille;
+	if (to_find[0] == '\0')
 		return (find_in);
-	if (find_in[0] == '\0')
-		return (NULL);
-	while (i < len && find_in[i] != '\0')
+	while (i <= len)
 	{
-		if (find_in[i] == to_find[j] && find_in[i] != '\0' && to_find[j] != '\0')
+		if (find_in[i] == to_find[0])
 		{
-			k = i;
-			while (find_in[k] == to_find[j] && k < len)
-			{
-				k++;
+			j = 0;
+			while (find_in[i + j] == to_find[j] && to_find[j] != '\0')
 				j++;
-			}
-			if (find_in[k] == to_find[j] && k < len)
+			if (to_find[j] == '\0' && (i + j) <= len) 
 				return (&find_in[i]);
 		}
-		j = 0;
 		i++;
 	}
 	return (NULL);
