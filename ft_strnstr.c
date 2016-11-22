@@ -31,7 +31,7 @@ char	*ft_strnstr(const char *meule_de_foin, const char *aiguille, size_t len)
 			j = 0;
 			while (find_in[i + j] == to_find[j] && to_find[j] != '\0')
 				j++;
-			if (to_find[j] == '\0' && (i + j) <= len) 
+			if (to_find[j] == '\0' && (i + j) <= len)
 				return (&find_in[i]);
 		}
 		i++;

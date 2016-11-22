@@ -31,7 +31,7 @@ char	*ft_strtrim(const char *s)
 	if (i == 0)
 		return ("");
 	while (str[begin] == ' ' || str[begin] == '\t' || str[begin] == '\n')
-		begin ++;
+		begin++;
 	while ((begin + j) != (i + 1))
 		j++;
 	new = (char*)malloc(sizeof(char) * (j + 1));
@@ -43,6 +43,6 @@ char	*ft_strtrim(const char *s)
 		new[j] = str[begin + j];
 		j++;
 	}
-	new[j] ='\0';
+	new[j] = '\0';
 	return (new);
 }
