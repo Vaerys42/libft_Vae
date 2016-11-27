@@ -6,82 +6,73 @@
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 17:41:42 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/22 11:10:21 by kboucaud         ###   ########.fr       */
+/*   Updated: 2016/11/26 16:35:51 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-static int	ft_size(const char *s, char c)
+static int	ft_words(const char *s, char c)
 {
-	int		a;
-	int		j;
-	int		k;
+	int		cnt;
+	int		i;
 
-	j = 0;
-	k = 0;
-	a = 0;
-	while (s[a] != '\0')
+	cnt = 0;
+	i = 0;
+	while (s[i] != '\0')
 	{
-		while (s[a] == c)
+		while (s[i] == c && s[i] != '\0')
+			i++;
+		if (s[i] != c && s[i] != '\0')
 		{
-			j++;
-			a++;
+			while (s[i] != c && s[i] != '\0')
+				i++;
+			cnt++;
 		}
-		if (s[a - 1] == c)
-			k++;
-		a++;
-		k++;
 	}
-	return (a - j + k);
+	return (cnt);
+}
+
+static int	ft_size(const char *s, char c, int i)
+{
+	int		size;
+
+	size = 0;
+	while (s[i] != c)
+	{
+		size++;
+		i++;
+	}
+	return (size);
 }
 
 char		**ft_strsplit(const char *s, char c)
 {
 	char	**new;
-	int		i;
+	int		nb_words;
 	int		j;
-	char	*tmp;
-	int		count;
+	int		i;
 
-	i = 0;
 	j = 0;
-	new = (char**)malloc(sizeof(char) * ft_size(s, c));
+	i = 0;
+	if (s == NULL)
+		return (NULL);
+	nb_words = ft_words(s, c);
+	new = (char**)malloc(sizeof(char*) * (nb_words + 1));
 	if (new == NULL)
 		return (NULL);
-	while (s[i] != '\0')
+	while (nb_words)
 	{
-		count = 0;
 		while (s[i] == c)
 			i++;
-		while (s[i + count] != c && s[i + count] != '\0')
-			count++;
-		tmp = (char*)malloc(sizeof(char) * (count + 1));
-		if (tmp == NULL)
-			return (NULL);
-		count = 0;
-		while (s[i] != c && s[i] != '\0')
-		{
-			tmp[count] = s[i];
+		new[j] = ft_strsub(s, i, ft_size(s, c, i));
+		while (s[i] != c)
 			i++;
-			count++;
-		}
-		tmp[count] = '\0';
-		new[j] = tmp;
 		j++;
-		free(tmp);
+		nb_words--;
 	}
 	new[j] = NULL;
 	return (new);
-}
-
-int			main()
-{
-	char	**test;
-
-	test = ft_strsplit("olol", ' ');
-	printf("%s", test[0]);
-	return (0);
 }

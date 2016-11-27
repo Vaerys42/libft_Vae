@@ -12,32 +12,41 @@
 
 #include <string.h>
 
-char	*ft_strstr(char *find_in, char *to_find)
+static int		ft_cmp(int i, const char *find_in, const char *to_find)
 {
-	int		len;
-	int		i;
 	int		j;
 	int		k;
 
+	j = 0;
+	k = i;
+	while (find_in[k] == to_find[j] && to_find[j] != '\0')
+	{
+		k++;
+		j++;
+	}
+	if (to_find[j] == '\0')
+		return (1);
+	else
+		return (0);
+}
+
+char			*ft_strstr(const char *find_in, const char *to_find)
+{
+	int		len;
+	int		i;
+	char	*fi;
+
 	len = 0;
 	i = 0;
-	j = 0;
-	k = 0;
+	fi = (char*)find_in;
 	if (to_find[0] == '\0')
-		return (find_in);
+		return (fi);
 	while (find_in[i] != '\0')
 	{
-		if (find_in[i] == to_find[j])
+		if (find_in[i] == to_find[0])
 		{
-			k = i;
-			while (find_in[k] == to_find[j] && to_find[j] != '\0')
-			{
-				k++;
-				j++;
-			}
-			if (to_find[j] == '\0')
-				return (&find_in[i]);
-			j = 0;
+			if (ft_cmp(i, find_in, to_find) == 1)
+				return (&fi[i]);
 		}
 		i++;
 	}

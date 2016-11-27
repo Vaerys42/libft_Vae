@@ -11,8 +11,10 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
+#include "libft.h"
 
-static int	ft_nbrlen(int i)
+static int		ft_nbrlen(int i)
 {
 	int		len;
 
@@ -31,17 +33,7 @@ static int	ft_nbrlen(int i)
 	return (len);
 }
 
-static int	ft_power(int i, int pwr)
-{
-	while (pwr != 1)
-	{
-		i = i * i;
-		pwr--;
-	}
-	return (i);
-}
-
-static char	*ft_intmin(void)
+static char		*ft_min(void)
 {
 	char	*str;
 
@@ -61,35 +53,50 @@ static char	*ft_intmin(void)
 	return (str);
 }
 
-char		*ft_itoa(int i)
+static char		*ft_transfert(int i, char *new, int j, int len)
+{
+	int		neg;
+
+	neg = 0;
+	if (i < 0)
+	{
+		neg = 1;
+		i = -i;
+		len--;
+	}
+	while (len > 0)
+	{
+		new[j] = (i % 10) + 48;
+		i = i / 10;
+		j++;
+		len--;
+	}
+	new[j] = (i % 10) + 48;
+	if (neg == 0)
+		new[j + 1] = '\0';
+	else
+	{
+		new[j + 1] = '-';
+		new[j + 2] = '\0';
+	}
+	return (ft_strrev(new));
+}
+
+char			*ft_itoa(int i)
 {
 	char	*new;
 	int		j;
-	int		pwr;
+	int		len;
 
 	j = 0;
+	len = ft_nbrlen(i) - 1;
 	if (i == -2147483648)
-		return (ft_intmin());
+		return (ft_min());
 	if (i == 2147483647)
 		return ("2147483647");
 	new = (char*)malloc(sizeof(char) * (ft_nbrlen(i) + 1));
 	if (new == NULL)
 		return (NULL);
-	pwr = ft_nbrlen(i) - 1;
-	if (i < 0)
-	{
-		new[j] = '-';
-		j++;
-		i = -i;
-		pwr--;
-	}
-	while (pwr >= 1)
-	{
-		new[j] = ((i / ft_power(10, pwr)) % 10) + 48;
-		j++;
-		pwr--;
-	}
-	new[j] = (i % 10) + 48;
-	new[j + 1] = '\0';
+	new = ft_transfert(i, new, j, len);
 	return (new);
 }

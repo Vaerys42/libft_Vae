@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 18:26:46 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/09 17:59:02 by kboucaud         ###   ########.fr       */
+/*   Created: 2016/11/27 13:30:13 by kboucaud          #+#    #+#             */
+/*   Updated: 2016/11/27 13:30:14 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrev(char *str)
 {
+	char	*new;
 	int		i;
-	char	*str;
+	int		j;
 
-	i = 0;
-	str = (char*)s;
-	while (str[i] != '\0' || c == '\0')
+	i = ft_strlen(str);
+	j = 0;
+	new = (char*)malloc(sizeof(char) * (i + 1));
+	while (j < (int)ft_strlen(str))
 	{
-		if (str[i] == c)
-			return (&str[i]);
-		i++;
+		new[j] = str[i - 1];
+		i--;
+		j++;
 	}
-	return (NULL);
+	new[j] = '\0';
+	return (new);
 }

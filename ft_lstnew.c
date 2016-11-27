@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kboucaud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 16:38:05 by kboucaud          #+#    #+#             */
-/*   Updated: 2016/11/09 14:34:09 by kboucaud         ###   ########.fr       */
+/*   Created: 2016/11/26 17:43:16 by kboucaud          #+#    #+#             */
+/*   Updated: 2016/11/26 17:43:18 by kboucaud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
+#include <string.h>
 
-char	*ft_strdup(const char *src)
+t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	char	*new;
-	int		len;
-	int		i;
+	t_list		*new;
 
-	i = 0;
-	len = ft_strlen(src);
-	new = (char*)malloc(sizeof(char) * (len + 1));
+	new = (t_list)malloc(sizeof(t_list));
 	if (new == NULL)
-	{
-		write(2, "ENOMEM", 6);
 		return (NULL);
-	}
-	while (src[i] != '\0')
+	if (content == NULL)
 	{
-		new[i] = src[i];
-		i++;
+		new->content = NULL;
+		new->content_size = 0;
 	}
-	new[i] = '\0';
+	else
+	{
+		new->content = (void*)malloc(sizeof(content));
+		if (new->content == NULL)
+			return (NULL);
+		ft_memcpy(new->content, content, content_size);
+		new->content_size = content_size;
+	}
+	new->next = NULL;
 	return (new);
 }
