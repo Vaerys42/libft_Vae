@@ -11,14 +11,18 @@
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdlib.h>
 #include "libft.h"
 
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	while (lst->next != NULL)
+	t_list		*new;
+
+	if (lst)
 	{
-		lst->content = (*f)(lst->content);
-		lst = lst->next;
+		new = f(lst);
+		new->next = ft_lstmap(lst->next, f);
+		return (new);
 	}
-	return (lst);
+	return (NULL);
 }

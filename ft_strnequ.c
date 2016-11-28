@@ -30,7 +30,7 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n)
 	i = 0;
 	c1 = 0;
 	c2 = 0;
-	while (s1[i] != '\0' || s2[i] != '\0' || i < n)
+	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
 	{
 		c1 = c1 + s1[i];
 		c2 = c2 + s2[i];
