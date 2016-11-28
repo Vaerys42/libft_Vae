@@ -19,8 +19,13 @@ static void		ft_putchar(char c)
 
 void			ft_putnbr(int c)
 {
+	if (c < -2147483648 || c > 2147483647)
+		return ;
 	if (c == -2147483648)
+	{
 		write(1, "-2147483648", 11);
+		return ;
+	}
 	if (c < 0)
 	{
 		ft_putchar('-');
