@@ -1,0 +1,56 @@
+
+w Tests] are Hardcore
+Test [memset] : OK
+Test [bzero] : OK
+Test [memcpy] : OK
+Test [memccpy] : OK
+Test [memmove] : OK
+Test [memchr] : OK
+Test [memcmp] : OK
+Test [strlen] : OK
+Test [strdup] : OK
+Test [strcpy] : OK
+Test [strncpy] : OK
+Test [strcat] : OK
+Test [strncat] : OK
+Test [strlcat] : Error Line 1412, Funct uf_test_strlcat FAIL
+Test [strchr] : OK
+Test [strrchr] : notre=Hello je tesx
+votre=(null)
+Error Line 1338, Funct uf_test_strrchr FAIL
+Test [strstr] : OK
+Test [strnstr] : OK
+Test [strcmp] : OK
+Test [strncmp] : Error Line 1226, Funct uf_test_strncmp FAIL
+Test [atoi] : OK
+Test [isalpha] : OK
+Test [isdigit] : OK
+Test [isalnum] : OK
+Test [isascii] : OK
+Test [isprint] : OK
+Test [toupper] : OK
+Test [tolower] : OK
+Test [memalloc_and_del] : OK
+Test [strnew] : OK
+Test [strdel] : Segmentation Fault
+Test [strclr] : Segmentation Fault
+Test [striter] : Segmentation Fault
+Test [striteri] : Segmentation Fault
+Test [strmap] : Segmentation Fault
+Test [strmapi] : Segmentation Fault
+Test [strequ] : Segmentation Fault
+Test [strnequ] : Segmentation Fault
+Test [strsub] : Segmentation Fault
+Test [strjoin] : Segmentation Fault
+Test [strsplit] : OK
+Test [itoa] : main(62816,0x7fff73da2000) malloc: *** error for object 0x1079ea70e: pointer being freed was not allocated
+*** set a breakpoint in malloc_error_break to debug
+The processus receive the signal 6
+Test [strtrim] : Segmentation Fault
+Test [lstnew] : OK
+Test [lstdelone] : OK
+Test [lstdel] : OK
+Test [lstadd] : OK
+Test [lstiter] : OK
+Test [lstmap] : OK
+
