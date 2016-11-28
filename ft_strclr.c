@@ -15,6 +15,8 @@ void	ft_strclr(char *str)
 	int i;
 
 	i = 0;
+	if (*str == NULL)
+		return ;
 	while (str[i] != '\0')
 	{
 		str[i] = '\0';
