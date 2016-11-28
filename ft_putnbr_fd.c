@@ -19,8 +19,13 @@ static void	ft_putfile(char c, int fd)
 
 void		ft_putnbr_fd(int c, int fd)
 {
+	if (c < -2147483648 ||  c > 2147483647)
+		return ;
 	if (c == -2147483648)
+	{
 		write(fd, "-2147483648", 11);
+		return ;
+	}
 	if (c < 0)
 	{
 		ft_putfile('-', fd);
