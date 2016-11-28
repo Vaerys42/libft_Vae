@@ -23,7 +23,7 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n)
 
 	l1 = ft_strlen(s1);
 	l2 = ft_strlen(s2);
-	if (*s1 == NULL || *s2 == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (0);
 	if (s1[0] == '\0' && s2[0] == '\0')
 		return (1);
