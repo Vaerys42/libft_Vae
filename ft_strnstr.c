@@ -24,7 +24,7 @@ char	*ft_strnstr(const char *meule_de_foin, const char *aiguille, size_t len)
 	to_find = (char*)aiguille;
 	if (to_find[0] == '\0')
 		return (find_in);
-	while (i <= len)
+	while (i <= len && find_in[i] != '\0')
 	{
 		if (find_in[i] == to_find[0])
 		{
