@@ -20,7 +20,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 
 	i = 0;
 	if (s == NULL || f == NULL)
-		return ;
+		return (NULL);
 	while (s[i] != '\0')
 		i++;
 	new = (char*)malloc(sizeof(char) * (i + 1));
